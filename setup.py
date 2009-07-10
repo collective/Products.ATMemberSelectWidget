@@ -3,7 +3,7 @@ import os
 
 version = '0.3.2'
 
-setup(name='Products.ATMemberSelectWidget',
+setup(name='Products.ATMemberSelectWidgetNG',
       version=version,
       description="An archetypes widget similar to ATReferenceBrowserWidget which allows you to select a member's id or email from a popup search window. It can even be used without archetypes being installed in the site.",
       long_description=open("README.txt").read() + "\n" +
