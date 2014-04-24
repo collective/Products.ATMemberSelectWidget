@@ -15,7 +15,7 @@
 
   <head>
     <title tal:content="here/title_or_id">Title or Id</title>
-    <base href="" tal:attributes="href here/renderBase" />
+    <base href="" tal:attributes="href context/@@plone/renderBase" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"
           tal:define="charset here/portal_properties/site_properties/default_charset;
                       dummy python:request.RESPONSE.setHeader('Content-Type', 'text/html;;charset=%s' % charset)"
@@ -203,8 +203,7 @@
                        name="name"
                        size="8"
                        tabindex=""
-                       tal:attributes="tabindex tabindex/next;
-                                       value request/name | nothing"
+                       tal:attributes="value request/name | nothing"
                        />
             </div>
     
@@ -215,7 +214,7 @@
                        name="email"
                        size="8"
                        tabindex=""
-                       tal:attributes="tabindex tabindex/next;
+                       tal:attributes="
                                        value request/email | nothing; "
                        />
             </div>
@@ -234,7 +233,6 @@
                        name="submit"
                        value="Search"
                        i18n:attributes="value label_search_users"
-                       tal:attributes="tabindex tabindex/next;"
                        />
             </div>
         </fieldset>

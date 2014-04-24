@@ -6,7 +6,9 @@
    <head><title></title></head>
    <body>
 
-     <metal:edit_macro_id define-macro="edit_id">
+       <metal:edit_macro_id define-macro="edit_id"
+       tal:define="mtool context/portal_membership;
+                   here_url context/@@plone_context_state/object_url;">
             <input type="hidden" value=""
                    tal:define="field_required field_required | nothing"
                    tal:condition="python:not field_required and multiVal"
@@ -112,7 +114,8 @@
 
      <metal:view_macro define-macro="view" 
                        tal:define="value accessor;
-                                   multiVal field/multiValued;">                                   
+                       multiVal field/multiValued;
+                       mtool context/portal_membership;">                                   
        <tal:single tal:condition="not:multiVal">
           <tal:block tal:define="minfo python:mtool.getMemberInfo(value);
                                    home python:mtool.getHomeFolder(value);">

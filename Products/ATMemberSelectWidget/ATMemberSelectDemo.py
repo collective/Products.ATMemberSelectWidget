@@ -2,6 +2,7 @@
 
 from Products.Archetypes.public import *
 from Products.ATMemberSelectWidget.ATMemberSelectWidget import *
+from Products.ATMemberSelectWidget.config import PROJECTNAME
 from DateTime import DateTime
 
 
@@ -26,4 +27,4 @@ class ATMemberSelectDemo(BaseContent):
     content_icon = "document_icon.gif"
     schema = schema
 
-registerType(ATMemberSelectDemo)
+registerType(ATMemberSelectDemo, PROJECTNAME)
